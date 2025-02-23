@@ -20,6 +20,10 @@ public class JigsawManager : MonoBehaviour
     private float width;
     private float height;
     private List<Transform> pieces;
+    private float PIEC_Z = -1f;
+
+    // We want the border to be behind the pieces.
+    private float BORDER_Z = 0f;
 
     private Transform draggingPiece = null;
     private Vector3 offset;
@@ -33,6 +37,7 @@ public class JigsawManager : MonoBehaviour
 
     public void SelectImage(int level)
     {
+        Debug.Log($"SelectImage({level})");
         if (pieces != null && pieces.Any())
         {
             ClearBoard();
@@ -94,7 +99,7 @@ public class JigsawManager : MonoBehaviour
                 piece.localPosition = new Vector3(
                   (-width * dimensions.x / 2) + (width * col) + (width / 2),
                   (-height * dimensions.y / 2) + (height * row) + (height / 2),
-                  -1);
+                  PIEC_Z);
                 piece.localScale = new Vector3(width, height, 1f);
 
                 // We don't have to name them, but always useful for debugging.
@@ -130,8 +135,7 @@ public class JigsawManager : MonoBehaviour
         float halfWidth = (width * dimensions.x) / 2f;
         float halfHeight = (height * dimensions.y) / 2f;
 
-        // We want the border to be behind the pieces.
-        float borderZ = 0f;
+        float borderZ = BORDER_Z;
 
         // Set border vertices, starting top left, going clockwise.
         lineRenderer.SetPosition(0, new Vector3(-halfWidth, halfHeight, borderZ));
@@ -170,7 +174,7 @@ public class JigsawManager : MonoBehaviour
         {
             float x = UnityEngine.Random.Range(-orthoWidth, orthoWidth);
             float y = UnityEngine.Random.Range(-orthoHeight, boarderBottom.y - pieceHeight);
-            piece.position = new Vector3(x, y, -1);
+            piece.position = new Vector3(x, y, PIEC_Z);
         }
     }
 
@@ -202,7 +206,6 @@ public class JigsawManager : MonoBehaviour
         if (draggingPiece)
         {
             Vector3 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            //newPosition.z = draggingPiece.position.z;
             newPosition += offset;
             draggingPiece.position = newPosition;
         }
