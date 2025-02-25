@@ -264,6 +264,6 @@ public class JigsawManager : MonoBehaviour
 
     public void GoMainMenu()
     {
-        SceneManager.LoadScene("MainMenu_Scene");
+        PersistentManager.Instance.TransitScene(SceneEnum.MainMenu_Scene);
     }
 }

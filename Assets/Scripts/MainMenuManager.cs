@@ -15,6 +15,6 @@ public class MainMenuManager : MonoBehaviour
 
     public void GoChap02()
     {
-        SceneManager.LoadScene("Chap_02_Scene");
+        PersistentManager.Instance.TransitScene(SceneEnum.Chap_02_Scene);
     }
 }
