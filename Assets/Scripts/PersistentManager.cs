@@ -8,7 +8,8 @@ public enum SceneEnum
     Chap_01_Scene = 1,
     Chap_02_Scene = 2,
     Chap_03_Scene = 3,
-    Chap_04_Scene = 4
+    Chap_04_Scene = 4,
+    Plot_Scene = 5
 }
 
 public class PersistentManager : MonoBehaviour

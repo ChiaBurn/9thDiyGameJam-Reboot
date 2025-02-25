@@ -17,4 +17,10 @@ public class MainMenuManager : MonoBehaviour
     {
         PersistentManager.Instance.TransitScene(SceneEnum.Chap_02_Scene);
     }
+
+
+    public void GoPlot()
+    {
+        PersistentManager.Instance.TransitScene(SceneEnum.Plot_Scene);
+    }
 }
