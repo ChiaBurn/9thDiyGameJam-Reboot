@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 135511750cecbac4bb1fb86875405e3a
+guid: f75a68c0ef99a234ba9d9af0427996c4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6419381785780662386
-    second: TestRobot_good_0
+      213: 8418544761761035367
+    second: Puzzle_Test_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TestRobot_good_0
+      name: Puzzle_Test_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 800
-        height: 1000
+        x: 132
+        y: 490
+        width: 812
+        height: 1015
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e8f4ee4f646c9e6a0800000000000000
-      internalID: -6419381785780662386
+      spriteID: 764fd728bdda4d470800000000000000
+      internalID: 8418544761761035367
       vertices: []
       indices: 
       edges: []
@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Puzzle_Test_0: 8418544761761035367
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

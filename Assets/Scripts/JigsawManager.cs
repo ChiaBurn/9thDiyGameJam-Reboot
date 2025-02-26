@@ -32,7 +32,7 @@ public class JigsawManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        SelectImage(0);
     }
 
     public void SelectImage(int level)
@@ -265,5 +265,9 @@ public class JigsawManager : MonoBehaviour
     public void GoMainMenu()
     {
         PersistentManager.Instance.TransitScene(SceneEnum.MainMenu_Scene);
+    }
+    public void GoPlot()
+    {
+        PersistentManager.Instance.TransitScene(SceneEnum.Plot_Scene);
     }
 }
