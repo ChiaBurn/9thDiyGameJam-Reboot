@@ -240,7 +240,6 @@ public class JigsawManager : MonoBehaviour
                 Debug.Log("all piece put");
 
                 finishedText.SetActive(true);
-                PersistentManager.Instance.finishedLevelCount++;
             }
         }
     }

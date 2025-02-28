@@ -9,7 +9,6 @@ public class PlotManager : MonoBehaviour
 {
     [Header("Dialogue settings")]
     public Text dialogueText;
-    [SerializeField]
     float secondsBetweenChar = 0.05f;
 
     [Header("Image object settings")]
@@ -20,6 +19,22 @@ public class PlotManager : MonoBehaviour
     public Sprite sweatEmoji;
     public Sprite blingEmoji;
 
+    [Header("Chap 01 Robot")]
+    public Sprite robot_01_01_good;
+    public Sprite robot_01_01_bad;
+    public Sprite robot_01_02_good;
+    public Sprite robot_01_02_bad;
+    public Sprite robot_01_03_good;
+    public Sprite robot_01_03_bad;
+
+    [Header("Chap 02 Robot")]
+    public Sprite robot_02_01_good;
+    public Sprite robot_02_01_bad;
+    public Sprite robot_02_02_good;
+    public Sprite robot_02_02_bad;
+    public Sprite robot_02_03_good;
+    public Sprite robot_02_03_bad;
+
 
 
 
@@ -27,22 +42,58 @@ public class PlotManager : MonoBehaviour
 
     void Start()
     {
-        SetImageByGameStatus();
         sentencesToShow = new Queue<string>();
+        var chap = PersistentManager.Instance.currentChapter;
+        var level = PersistentManager.Instance.currentLevel;
+        var status = PersistentManager.Instance.currentLevelStatus;
 
-        var testSentences = new string[]
-        {
-            "第一句話第一句話第一句話第一句話第一句話第一句話第一句話",
-            "第二句話第二句話第二句話第二句話第二句話第二句話第二句話第二句話",
-            "最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話"
-        };
 
-        StartDialogue(testSentences);
+        SetImageByGameStatus(chap, level, status);
+        StartDialogue(chap, level, status);
     }
 
-    private void SetImageByGameStatus()
+    private void SetImageByGameStatus(int chap, int level, LevelStatusEnum status)
     {
-        switch (PersistentManager.Instance.currentLevelStatus)
+
+        #region Robots Setting
+        var RobotSpriteDictionary = new Dictionary<string, Sprite>()
+        {
+            #region Chap1_1
+            { $"1_1_{nameof(LevelStatusEnum.Begin)}", robot_01_01_bad },
+            { $"1_1_{nameof(LevelStatusEnum.Failed)}", robot_01_01_bad },
+            { $"1_1_{nameof(LevelStatusEnum.Successed)}", robot_01_01_good },
+            #endregion Chap1_1
+            #region Chap1_2
+            { $"1_2_{nameof(LevelStatusEnum.Begin)}", robot_01_02_bad },
+            { $"1_2_{nameof(LevelStatusEnum.Failed)}", robot_01_02_bad },
+            { $"1_2_{nameof(LevelStatusEnum.Successed)}", robot_01_02_good },
+            #endregion Chap1_2
+            #region Chap1_3
+            { $"1_3_{nameof(LevelStatusEnum.Begin)}", robot_01_03_bad },
+            { $"1_3_{nameof(LevelStatusEnum.Failed)}", robot_01_03_bad },
+            { $"1_3_{nameof(LevelStatusEnum.Successed)}", robot_01_03_good },
+            #endregion Chap1_3
+
+            #region Chap2_1
+            { $"2_1_{nameof(LevelStatusEnum.Begin)}", robot_02_01_bad },
+            { $"2_1_{nameof(LevelStatusEnum.Failed)}", robot_02_01_bad },
+            { $"2_1_{nameof(LevelStatusEnum.Successed)}", robot_02_01_good },
+            #endregion Chap2_1
+            #region Chap2_2
+            { $"2_2_{nameof(LevelStatusEnum.Begin)}", robot_02_02_bad },
+            { $"2_2_{nameof(LevelStatusEnum.Failed)}", robot_02_02_bad },
+            { $"2_2_{nameof(LevelStatusEnum.Successed)}", robot_02_02_good },
+            #endregion Chap2_2
+            #region Chap2_3
+            { $"2_3_{nameof(LevelStatusEnum.Begin)}", robot_02_03_bad },
+            { $"2_3_{nameof(LevelStatusEnum.Failed)}", robot_02_03_bad },
+            { $"2_3_{nameof(LevelStatusEnum.Successed)}", robot_02_03_good },
+            #endregion Chap2_3
+
+        };
+        #endregion
+
+        switch (status)
         {
             case LevelStatusEnum.Successed:
                 emoji.sprite = blingEmoji;
@@ -54,10 +105,215 @@ public class PlotManager : MonoBehaviour
                 emoji.sprite = sweatEmoji;
                 break;
         }
+
+        robot.sprite = RobotSpriteDictionary[$"{chap}_{level}_{status}"];
     }
 
-    private void StartDialogue(IEnumerable<string> sentences)
-    {
+    private void StartDialogue(int chap, int level, LevelStatusEnum status)
+    {        
+        
+        #region Dialogues Setting
+        var dialogueDictionary_TW = new Dictionary<string, string[]>()
+        {
+            #region Chap1_1
+            {
+                $"1_1_{nameof(LevelStatusEnum.Begin)}",
+                new string[]
+                {
+                    "第1章節，第1關，關卡開始。",
+                    "第一句話第一句話第一句話第一句話第一句話第一句話第一句話",
+                    "第二句話第二句話第二句話第二句話第二句話第二句話第二句話第二句話",
+                    "最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話"
+                }
+            },
+            {
+                $"1_1_{nameof(LevelStatusEnum.Failed)}",
+                new string[]
+                {
+                    "第1章節，第1關，關卡失敗。",
+                    "第一句話第一句話第一句話第一句話第一句話第一句話第一句話",
+                    "第二句話第二句話第二句話第二句話第二句話第二句話第二句話第二句話",
+                    "最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話"
+                }
+            },
+            {
+                $"1_1_{nameof(LevelStatusEnum.Successed)}",
+                new string[]
+                {
+                    "第1章節，第1關，關卡成功。",
+                    "第一句話第一句話第一句話第一句話第一句話第一句話第一句話",
+                    "第二句話第二句話第二句話第二句話第二句話第二句話第二句話第二句話",
+                    "最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話"
+                }
+            },
+            #endregion Chap1_1
+            #region Chap1_2
+            {
+                $"1_2_{nameof(LevelStatusEnum.Begin)}",
+                new string[]
+                {
+                    "第1章節，第2關，關卡開始。",
+                    "第一句話第一句話第一句話第一句話第一句話第一句話第一句話",
+                    "第二句話第二句話第二句話第二句話第二句話第二句話第二句話第二句話",
+                    "最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話"
+                }
+            },
+            {
+                $"1_2_{nameof(LevelStatusEnum.Failed)}",
+                new string[]
+                {
+                    "第1章節，第2關，關卡失敗。",
+                    "第一句話第一句話第一句話第一句話第一句話第一句話第一句話",
+                    "第二句話第二句話第二句話第二句話第二句話第二句話第二句話第二句話",
+                    "最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話"
+                }
+            },
+            {
+                $"1_2_{nameof(LevelStatusEnum.Successed)}",
+                new string[]
+                {
+                    "第1章節，第2關，關卡成功。",
+                    "第一句話第一句話第一句話第一句話第一句話第一句話第一句話",
+                    "第二句話第二句話第二句話第二句話第二句話第二句話第二句話第二句話",
+                    "最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話"
+                }
+            },
+            #endregion Chap1_2
+            #region Chap1_3
+            {
+                $"1_3_{nameof(LevelStatusEnum.Begin)}",
+                new string[]
+                {
+                    "第1章節，第3關，關卡開始。",
+                    "第一句話第一句話第一句話第一句話第一句話第一句話第一句話",
+                    "第二句話第二句話第二句話第二句話第二句話第二句話第二句話第二句話",
+                    "最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話"
+                }
+            },
+            {
+                $"1_3_{nameof(LevelStatusEnum.Failed)}",
+                new string[]
+                {
+                    "第1章節，第3關，關卡失敗。",
+                    "第一句話第一句話第一句話第一句話第一句話第一句話第一句話",
+                    "第二句話第二句話第二句話第二句話第二句話第二句話第二句話第二句話",
+                    "最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話"
+                }
+            },
+            {
+                $"1_3_{nameof(LevelStatusEnum.Successed)}",
+                new string[]
+                {
+                    "第1章節，第3關，關卡成功。",
+                    "第一句話第一句話第一句話第一句話第一句話第一句話第一句話",
+                    "第二句話第二句話第二句話第二句話第二句話第二句話第二句話第二句話",
+                    "最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話"
+                }
+            },
+            #endregion Chap1_3
+           
+            #region Chap2_1
+            {
+                $"2_1_{nameof(LevelStatusEnum.Begin)}",
+                new string[]
+                {
+                    "第2章節，第1關，關卡開始。",
+                    "第一句話第一句話第一句話第一句話第一句話第一句話第一句話",
+                    "第二句話第二句話第二句話第二句話第二句話第二句話第二句話第二句話",
+                    "最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話"
+                }
+            },
+            {
+                $"2_1_{nameof(LevelStatusEnum.Failed)}",
+                new string[]
+                {
+                    "第2章節，第1關，關卡失敗。",
+                    "第一句話第一句話第一句話第一句話第一句話第一句話第一句話",
+                    "第二句話第二句話第二句話第二句話第二句話第二句話第二句話第二句話",
+                    "最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話"
+                }
+            },
+            {
+                $"2_1_{nameof(LevelStatusEnum.Successed)}",
+                new string[]
+                {
+                    "第2章節，第1關，關卡成功。",
+                    "第一句話第一句話第一句話第一句話第一句話第一句話第一句話",
+                    "第二句話第二句話第二句話第二句話第二句話第二句話第二句話第二句話",
+                    "最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話"
+                }
+            },
+            #endregion Chap2_1
+            #region Chap2_2
+            {
+                $"2_2_{nameof(LevelStatusEnum.Begin)}",
+                new string[]
+                {
+                    "第1章節，第2關，關卡開始。",
+                    "第一句話第一句話第一句話第一句話第一句話第一句話第一句話",
+                    "第二句話第二句話第二句話第二句話第二句話第二句話第二句話第二句話",
+                    "最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話"
+                }
+            },
+            {
+                $"2_2_{nameof(LevelStatusEnum.Failed)}",
+                new string[]
+                {
+                    "第2章節，第2關，關卡失敗。",
+                    "第一句話第一句話第一句話第一句話第一句話第一句話第一句話",
+                    "第二句話第二句話第二句話第二句話第二句話第二句話第二句話第二句話",
+                    "最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話"
+                }
+            },
+            {
+                $"2_2_{nameof(LevelStatusEnum.Successed)}",
+                new string[]
+                {
+                    "第2章節，第2關，關卡成功。",
+                    "第一句話第一句話第一句話第一句話第一句話第一句話第一句話",
+                    "第二句話第二句話第二句話第二句話第二句話第二句話第二句話第二句話",
+                    "最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話"
+                }
+            },
+            #endregion Chap2_2
+            #region Chap2_3
+            {
+                $"2_3_{nameof(LevelStatusEnum.Begin)}",
+                new string[]
+                {
+                    "第1章節，第3關，關卡開始。",
+                    "第一句話第一句話第一句話第一句話第一句話第一句話第一句話",
+                    "第二句話第二句話第二句話第二句話第二句話第二句話第二句話第二句話",
+                    "最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話"
+                }
+            },
+            {
+                $"2_3_{nameof(LevelStatusEnum.Failed)}",
+                new string[]
+                {
+                    "第2章節，第3關，關卡失敗。",
+                    "第一句話第一句話第一句話第一句話第一句話第一句話第一句話",
+                    "第二句話第二句話第二句話第二句話第二句話第二句話第二句話第二句話",
+                    "最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話"
+                }
+            },
+            {
+                $"2_3_{nameof(LevelStatusEnum.Successed)}",
+                new string[]
+                {
+                    "第2章節，第3關，關卡成功。",
+                    "第一句話第一句話第一句話第一句話第一句話第一句話第一句話",
+                    "第二句話第二句話第二句話第二句話第二句話第二句話第二句話第二句話",
+                    "最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話最後一句話"
+                }
+            },
+            #endregion Chap2_3
+        };
+
+        #endregion
+
+        var sentences = dialogueDictionary_TW[$"{chap}_{level}_{status}"];
+      
         sentencesToShow.Clear();
         foreach (var sentence in sentences)
         {
@@ -100,11 +356,4 @@ public class PlotManager : MonoBehaviour
         PersistentManager.Instance.TransitScene(SceneEnum.MainMenu_Scene);
     }
 
-    public class Robot
-    {
-        string key;
-        Texture robotImg;
-        Texture emojiImg;
-        string[] sentences;
-    }
 }

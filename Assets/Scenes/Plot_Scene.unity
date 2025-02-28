@@ -228,11 +228,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 3520682}
-  secondsBetweenChar: 0.05
   robot: {fileID: 923877460}
   emoji: {fileID: 1901894586}
   sweatEmoji: {fileID: -6239237864580553602, guid: 8f7cf20bdd184854ebadb610edd3cf92, type: 3}
   blingEmoji: {fileID: -2881584131814549091, guid: 2ebe85266932dbb41a349ec41ef62572, type: 3}
+  robot_01_01_good: {fileID: -189092092112668989, guid: ce78e85c90f47cc48997bcd492a59f40, type: 3}
+  robot_01_01_bad: {fileID: -6008534854821522894, guid: 9c432e063c0ca6b449d1d5a3d5064207, type: 3}
+  robot_01_02_good: {fileID: 809655381002455499, guid: 9eb4ad80ca549b34cbaccc068c722169, type: 3}
+  robot_01_02_bad: {fileID: -9151633604942712358, guid: 9829dd641ab737f479e20fb713b59764, type: 3}
+  robot_01_03_good: {fileID: 6570979375711314180, guid: 54dfb5d73b59f5541b63462a60d0b39f, type: 3}
+  robot_01_03_bad: {fileID: 7746773785887969181, guid: 9d304d68da8af674da94274c383e45ae, type: 3}
+  robot_02_01_good: {fileID: 1612772338832924375, guid: 8f2227369bf1b0443b676a81d5139ffe, type: 3}
+  robot_02_01_bad: {fileID: 7833123573062371789, guid: c45c0868736ae7149a07597114da233a, type: 3}
+  robot_02_02_good: {fileID: 8771504188814193831, guid: c145986f33da0a94782d787adaa804d3, type: 3}
+  robot_02_02_bad: {fileID: 3555364551606664905, guid: 8696bd29123155f4fb16856e4e1fe337, type: 3}
+  robot_02_03_good: {fileID: 4808168688507950933, guid: 02a94d290f2bd834aa2365cd33f86e35, type: 3}
+  robot_02_03_bad: {fileID: -1463777017401222189, guid: fb4b187f17624fb4c87eda8f0663bccd, type: 3}
 --- !u!4 &304083135
 Transform:
   m_ObjectHideFlags: 0

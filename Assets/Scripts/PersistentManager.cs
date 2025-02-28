@@ -22,12 +22,9 @@ public enum LevelStatusEnum
 public class PersistentManager : MonoBehaviour
 {
     public static PersistentManager Instance { get; private set; }
-    public int finishedLevelCount = 0;
-    public int currentChapter = 0;
-    public int currentLevel = 0;
-
-    [SerializeField]
-    public LevelStatusEnum currentLevelStatus = 0;
+    public int currentChapter = 1;
+    public int currentLevel = 1;
+    public LevelStatusEnum currentLevelStatus = LevelStatusEnum.Begin;
 
     private void Awake()
     {
