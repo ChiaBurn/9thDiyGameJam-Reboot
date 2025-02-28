@@ -2,18 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
 public class PlotManager : MonoBehaviour
 {
+    [Header("Dialogue settings")]
     public Text dialogueText;
     [SerializeField]
     float secondsBetweenChar = 0.05f;
+
+    [Header("Image object settings")]
+    public Image robot;
+    public Image emoji;
+
+    [Header("Image settings")]
+    public Sprite sweatEmoji;
+    public Sprite blingEmoji;
+
+
+
 
     private Queue<string> sentencesToShow;
 
     void Start()
     {
+        SetImageByGameStatus();
         sentencesToShow = new Queue<string>();
 
         var testSentences = new string[]
@@ -26,7 +40,23 @@ public class PlotManager : MonoBehaviour
         StartDialogue(testSentences);
     }
 
-    public void StartDialogue(IEnumerable<string> sentences)
+    private void SetImageByGameStatus()
+    {
+        switch (PersistentManager.Instance.currentLevelStatus)
+        {
+            case LevelStatusEnum.Successed:
+                emoji.sprite = blingEmoji;
+                break;
+
+            case LevelStatusEnum.Begin:
+            case LevelStatusEnum.Failed:
+            default:
+                emoji.sprite = sweatEmoji;
+                break;
+        }
+    }
+
+    private void StartDialogue(IEnumerable<string> sentences)
     {
         sentencesToShow.Clear();
         foreach (var sentence in sentences)
@@ -35,7 +65,6 @@ public class PlotManager : MonoBehaviour
         }
 
         ShowNextSentence();
-
     }
 
     public void ShowNextSentence()
@@ -49,8 +78,6 @@ public class PlotManager : MonoBehaviour
         var sentenceIsShowing = sentencesToShow.Dequeue();
         StopCoroutine(nameof(TypeSentence));
         StartCoroutine(nameof(TypeSentence), sentenceIsShowing);
-
-
     }
 
     private IEnumerator TypeSentence(string sentence)
@@ -68,11 +95,16 @@ public class PlotManager : MonoBehaviour
         Debug.Log("End Dialogue");
     }
 
-
-
-
     public void GoMainMenu()
     {
         PersistentManager.Instance.TransitScene(SceneEnum.MainMenu_Scene);
+    }
+
+    public class Robot
+    {
+        string key;
+        Texture robotImg;
+        Texture emojiImg;
+        string[] sentences;
     }
 }

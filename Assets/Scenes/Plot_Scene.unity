@@ -229,6 +229,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 3520682}
   secondsBetweenChar: 0.05
+  robot: {fileID: 923877460}
+  emoji: {fileID: 1901894586}
+  sweatEmoji: {fileID: -6239237864580553602, guid: 8f7cf20bdd184854ebadb610edd3cf92, type: 3}
+  blingEmoji: {fileID: -2881584131814549091, guid: 2ebe85266932dbb41a349ec41ef62572, type: 3}
 --- !u!4 &304083135
 Transform:
   m_ObjectHideFlags: 0

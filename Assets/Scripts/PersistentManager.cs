@@ -12,10 +12,22 @@ public enum SceneEnum
     Plot_Scene = 5
 }
 
+public enum LevelStatusEnum
+{
+    Begin,
+    Successed,
+    Failed
+}
+
 public class PersistentManager : MonoBehaviour
 {
     public static PersistentManager Instance { get; private set; }
     public int finishedLevelCount = 0;
+    public int currentChapter = 0;
+    public int currentLevel = 0;
+
+    [SerializeField]
+    public LevelStatusEnum currentLevelStatus = 0;
 
     private void Awake()
     {
