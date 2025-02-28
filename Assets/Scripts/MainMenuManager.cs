@@ -9,12 +9,17 @@ public class MainMenuManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        FinishedLevelConutText.text = $"Finished Level: {PersistentManager.Instance.finishedLevelCount}";
     }
 
 
     public void GoChap02()
     {
         PersistentManager.Instance.TransitScene(SceneEnum.Chap_02_Scene);
+    }
+
+
+    public void GoPlot()
+    {
+        PersistentManager.Instance.TransitScene(SceneEnum.Plot_Scene);
     }
 }
