@@ -122,12 +122,12 @@ TextureImporter:
       name: Item_Plot_BlingTest_0
       rect:
         serializedVersion: 2
-        x: 77
-        y: 1150
-        width: 155
-        height: 173
+        x: 69
+        y: 1085
+        width: 344
+        height: 402
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -140,55 +140,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Item_Plot_BlingTest_1
-      rect:
-        serializedVersion: 2
-        x: 195
-        y: 1302
-        width: 175
-        height: 189
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a29ca3d62ee416b20800000000000000
-      internalID: 3125866350773979434
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Item_Plot_BlingTest_2
-      rect:
-        serializedVersion: 2
-        x: 269
-        y: 1107
-        width: 124
-        height: 134
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4ebe0bdc37d55be30800000000000000
-      internalID: 4518620553089706980
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 23da8ad0e4328dc42a29aafc6467aef4
     internalID: 0
     vertices: []
     indices: 
