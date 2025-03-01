@@ -9,7 +9,8 @@ public enum SceneEnum
     Chap_02_Scene = 2,
     Chap_03_Scene = 3,
     Chap_04_Scene = 4,
-    Plot_Scene = 5
+    Plot_Scene = 5,
+    Result_Scene = 6
 }
 
 public enum LevelStatusEnum

@@ -122,10 +122,10 @@ TextureImporter:
       name: Item_Result_StarTest_0
       rect:
         serializedVersion: 2
-        x: 189
-        y: 936
-        width: 246
-        height: 240
+        x: 95
+        y: 877
+        width: 906
+        height: 550
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,55 +140,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Item_Result_StarTest_1
-      rect:
-        serializedVersion: 2
-        x: 425
-        y: 1024
-        width: 261
-        height: 259
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b6baea3ebefe5bf60800000000000000
-      internalID: 8049603705410857835
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Item_Result_StarTest_2
-      rect:
-        serializedVersion: 2
-        x: 674
-        y: 1118
-        width: 242
-        height: 255
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9f986411e25514a80800000000000000
-      internalID: -8484406566642611719
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 1ebfea2009b7b554fb01adfdc8c0990f
     internalID: 0
     vertices: []
     indices: 
