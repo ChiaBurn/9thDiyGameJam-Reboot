@@ -26,6 +26,7 @@ public class PersistentManager : MonoBehaviour
     public int currentChapter = 1;
     public int currentLevel = 1;
     public LevelStatusEnum currentLevelStatus = LevelStatusEnum.Begin;
+    public int currentChapterScore = 0;
 
     private void Awake()
     {
