@@ -22,4 +22,10 @@ public class MainMenuManager : MonoBehaviour
     {
         PersistentManager.Instance.TransitScene(SceneEnum.Plot_Scene);
     }
+
+
+    public void GoResult()
+    {
+        PersistentManager.Instance.TransitScene(SceneEnum.Result_Scene);
+    }
 }

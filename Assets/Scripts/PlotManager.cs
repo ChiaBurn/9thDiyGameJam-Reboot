@@ -113,7 +113,7 @@ public class PlotManager : MonoBehaviour
     {        
         
         #region Dialogues Setting
-        var dialogueDictionary_TW = new Dictionary<string, string[]>()
+        var dialogueDictionary_TW = new Dictionary<string, string[]>
         {
             #region Chap1_1
             {
