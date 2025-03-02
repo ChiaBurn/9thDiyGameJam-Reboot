@@ -36,9 +36,10 @@ public class PlotManager : MonoBehaviour
     public Sprite robot_02_03_bad;
 
 
-private PersistentManager manager;
+    private PersistentManager manager;
 
     private Queue<string> sentencesToShow;
+    private string currentSentence = string.Empty;
 
     void Start()
     {
@@ -111,8 +112,8 @@ private PersistentManager manager;
     }
 
     private void StartDialogue(int chap, int level, LevelStatusEnum status)
-    {        
-        
+    {
+
         #region Dialogues Setting
         var dialogueDictionary_TW = new Dictionary<string, string[]>
         {
@@ -296,7 +297,7 @@ private PersistentManager manager;
         #endregion
 
         var sentences = dialogueDictionary_TW[$"{chap}_{level}_{status}"];
-      
+
         sentencesToShow.Clear();
         foreach (var sentence in sentences)
         {
@@ -308,20 +309,28 @@ private PersistentManager manager;
 
     public void ShowNextSentence()
     {
-        if (!sentencesToShow.Any())
-        {
-            EndDialogue();
-            return;
-        }
-
-        var sentenceIsShowing = sentencesToShow.Dequeue();
         StopCoroutine(nameof(TypeSentence));
-        StartCoroutine(nameof(TypeSentence), sentenceIsShowing);
+        
+        if (currentSentence != "" && dialogueText.text != currentSentence)
+        {
+            dialogueText.text = currentSentence;
+        }
+        else
+        {
+
+            if (!sentencesToShow.Any())
+            {
+                EndDialogue();
+                return;
+            }
+            currentSentence = sentencesToShow.Dequeue();
+            dialogueText.text = "";
+            StartCoroutine(nameof(TypeSentence), currentSentence);
+        }
     }
 
     private IEnumerator TypeSentence(string sentence)
     {
-        dialogueText.text = "";
         foreach (var c in sentence.ToCharArray())
         {
             yield return new WaitForSeconds(secondsBetweenChar);

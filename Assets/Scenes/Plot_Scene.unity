@@ -238,10 +238,10 @@ MonoBehaviour:
   robot_01_02_bad: {fileID: 5772820238045667372, guid: 99f3f9477a35d654594fdec0cdf343e9, type: 3}
   robot_01_03_good: {fileID: 4671920372597472624, guid: 842e1e54cbbc8d5488dfb8c70915e08e, type: 3}
   robot_01_03_bad: {fileID: 4785435799305861156, guid: fc2eb347f6da6894f85123f89e4635d5, type: 3}
-  robot_02_01_good: {fileID: 1612772338832924375, guid: 8f2227369bf1b0443b676a81d5139ffe, type: 3}
-  robot_02_01_bad: {fileID: 7833123573062371789, guid: c45c0868736ae7149a07597114da233a, type: 3}
-  robot_02_02_good: {fileID: 8771504188814193831, guid: c145986f33da0a94782d787adaa804d3, type: 3}
-  robot_02_02_bad: {fileID: 3555364551606664905, guid: 8696bd29123155f4fb16856e4e1fe337, type: 3}
+  robot_02_01_good: {fileID: 8168554330194179414, guid: c68280c5492247546bef77ebe22a4cdb, type: 3}
+  robot_02_01_bad: {fileID: 3434131122729510422, guid: 8fd74f516ec355941a18d3d74e22fe29, type: 3}
+  robot_02_02_good: {fileID: 7262095097011920349, guid: ffdb7021ad7439049959a0ee226abc75, type: 3}
+  robot_02_02_bad: {fileID: 4600285846132669927, guid: 98a3c0127b9a66942a5e7aaa471e1f7a, type: 3}
   robot_02_03_good: {fileID: 4808168688507950933, guid: 02a94d290f2bd834aa2365cd33f86e35, type: 3}
   robot_02_03_bad: {fileID: -1463777017401222189, guid: fb4b187f17624fb4c87eda8f0663bccd, type: 3}
 --- !u!4 &304083135
