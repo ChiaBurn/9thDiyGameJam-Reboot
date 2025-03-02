@@ -177,9 +177,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 35
-    m_FontStyle: 0
+    m_Font: {fileID: 12800000, guid: be6aa1b7313b7be4ab498ab47e5324e5, type: 3}
+    m_FontSize: 33
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 211
@@ -188,7 +188,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1.5
+    m_LineSpacing: 1
   m_Text: "\u5287\u60C5\u6587\u5B57\u5287\u60C5\u6587\u5B57\u5287\u60C5\u6587\u5B57\u5287\u60C5\u6587\u5B57\u5287\u60C5\u6587\u5B57\u5287\u60C5\u6587\u5B57\u5287\u60C5\u6587\u5B57\u5287\u60C5\u6587\u5B57\u5287\u60C5\u6587\u5B57\u5287\u60C5\u6587\u5B57\u5287\u60C5\u6587\u5B57\u5287\u60C5\u6587\u5B57\u5287\u60C5\u6587\u5B57\u5287\u60C5\u6587\u5B57\u5287\u60C5\u6587\u5B57"
 --- !u!222 &3520683
 CanvasRenderer:
