@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 634158506e578ae45b1090032905e835
+guid: 7fad5689f60ef314fa3dbc86e17c7e55
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4942602111907038818
-    second: robot A-1_O+O_0
+      213: -2305112646409274607
+    second: robot A-1_X+X_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: robot A-2_O+O
+      name: robot A-2_X+X
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 266805a0f66a79440800000000000000
-      internalID: 4942602111907038818
+      spriteID: 11bb387d2489200e0800000000000000
+      internalID: -2305112646409274607
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: d7bcea0ea6ec55542ac308189b31530c
+    spriteID: 51884021a21f23e4e919ae213ea756b6
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      robot A-2_O+O: 4942602111907038818
+      robot A-2_X+X: -2305112646409274607
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

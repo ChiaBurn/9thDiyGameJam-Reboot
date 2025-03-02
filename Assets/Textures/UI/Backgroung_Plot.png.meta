@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7fad5689f60ef314fa3dbc86e17c7e55
+guid: da0a0ccc8fc7c4d41a41ea40c49aac38
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2305112646409274607
-    second: robot A-1_X+X_0
+      213: -3289751669769338015
+    second: "\u5E95\u8272_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: robot A-1_X+X
+      name: Backgroung_Plot_Test
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1000
-        height: 890
+        width: 1080
+        height: 1920
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 11bb387d2489200e0800000000000000
-      internalID: -2305112646409274607
+      spriteID: 163862449447852d0800000000000000
+      internalID: -3289751669769338015
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 51884021a21f23e4e919ae213ea756b6
+    spriteID: fb55ce5ac8b744840af684ad349872d5
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      robot A-1_X+X: -2305112646409274607
+      Backgroung_Plot_Test: -3289751669769338015
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

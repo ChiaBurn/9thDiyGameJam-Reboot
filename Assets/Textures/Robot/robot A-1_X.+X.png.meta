@@ -116,7 +116,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: robot A-2_X.+X
+      name: robot A-1_X.+X
       rect:
         serializedVersion: 2
         x: 0
@@ -151,7 +151,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      robot A-2_X.+X: 131420661914474831
+      robot A-1_X.+X: 131420661914474831
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

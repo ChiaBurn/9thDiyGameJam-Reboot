@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 634158506e578ae45b1090032905e835
+guid: 1349805d0963db5448171fba202ce439
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4942602111907038818
-    second: robot A-1_O+O_0
+      213: -5471686974647001117
+    second: "\u5C0D\u8A71\u6846_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: robot A-2_O+O
+      name: Item_Plot_DialogueBox
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1000
-        height: 890
+        x: 133
+        y: 91
+        width: 815
+        height: 373
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 266805a0f66a79440800000000000000
-      internalID: 4942602111907038818
+      spriteID: 3ef9802dfa9a014b0800000000000000
+      internalID: -5471686974647001117
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: d7bcea0ea6ec55542ac308189b31530c
+    spriteID: 15e87c3053e692a41b3fef441cce898c
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      robot A-2_O+O: 4942602111907038818
+      Item_Plot_DialogueBox: -5471686974647001117
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

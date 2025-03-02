@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 634158506e578ae45b1090032905e835
+guid: ae191a0fd2bc7a841b156372977f4cf1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4942602111907038818
-    second: robot A-1_O+O_0
+      213: -3904219240512215891
+    second: robot A-2_O+O_0
+  - first:
+      213: -5648655287864702654
+    second: robot A-2_O+O_1
+  - first:
+      213: 7398589502438230517
+    second: robot A-2_O+O_2
+  - first:
+      213: -2213099314651093799
+    second: robot A-2_O+O_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 266805a0f66a79440800000000000000
-      internalID: 4942602111907038818
+      spriteID: 9d4af8916ed7941e0800000000000000
+      internalID: -2213099314651093799
       vertices: []
       indices: 
       edges: []
@@ -138,7 +147,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: d7bcea0ea6ec55542ac308189b31530c
+    spriteID: ffc0539ecba05d2418069cfd75285691
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +157,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      robot A-1_O+O: 4942602111907038818
+      robot A-1_O+O: -2213099314651093799
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

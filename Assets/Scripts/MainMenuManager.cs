@@ -97,4 +97,8 @@ public class MainMenuManager : MonoBehaviour
     {
         manager.Go(SceneEnum.Result_Scene);
     }
+    public void GoPlot()
+    {
+        manager.Go(SceneEnum.Plot_Scene);
+    }
 }
