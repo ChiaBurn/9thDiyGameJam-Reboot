@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -22,6 +23,7 @@ public enum LevelStatusEnum
 
 public class PersistentManager : MonoBehaviour
 {
+    [SerializeField] public Animator transitionAnim;
     public bool isDebugMode = false;
     public static PersistentManager Instance { get; private set; }
     public int currentChapter = 1;
@@ -52,20 +54,20 @@ public class PersistentManager : MonoBehaviour
             case SceneEnum.MainMenu_Scene:
                 Debug.Log("case SceneEnum.MainMenu_Scene");
                 SetChapInitialStatus(1);
-                TransitScene(SceneEnum.Plot_Scene);
+                Go(SceneEnum.Plot_Scene);
                 break;
 
             case SceneEnum.Chap_01_Scene:
             case SceneEnum.Chap_02_Scene:
                 Debug.Log("case Chap_01_Scene or Chap_02_Scene");
-                TransitScene(SceneEnum.Plot_Scene);
+                Go(SceneEnum.Plot_Scene);
                 break;
 
             case SceneEnum.Plot_Scene:
                 Debug.Log("case SceneEnum.Plot_Scene");
                 if (currentLevelStatus.Equals(LevelStatusEnum.Begin))
                 {
-                    TransitScene(currentChapter switch
+                    Go(currentChapter switch
                     {
                         1 => SceneEnum.Chap_01_Scene,
                         2 => SceneEnum.Chap_02_Scene,
@@ -76,13 +78,13 @@ public class PersistentManager : MonoBehaviour
                 {
                     if (currentLevel == 3)
                     {
-                        TransitScene(SceneEnum.Result_Scene);
+                        Go(SceneEnum.Result_Scene);
                     }
                     else
                     {
                         UpgradeChapAndLevel();
                         // Test
-                        TransitScene(SceneEnum.Plot_Scene);
+                        Go(SceneEnum.Plot_Scene);
                     }
 
                 }
@@ -96,13 +98,13 @@ public class PersistentManager : MonoBehaviour
 
                 if (isGameOver)
                 {
-                    TransitScene(SceneEnum.MainMenu_Scene);
+                    Go(SceneEnum.MainMenu_Scene);
                 }
                 else
                 {
                     var nextChap = currentChapter + 1;
                     SetChapInitialStatus(nextChap);
-                    TransitScene(SceneEnum.Plot_Scene);
+                    Go(SceneEnum.Plot_Scene);
                 }
                 break;
         }
@@ -141,9 +143,17 @@ public class PersistentManager : MonoBehaviour
     }
 
 
-    public void TransitScene(SceneEnum sceneEnum)
+    public void Go(SceneEnum sceneEnum)
     {
-        SceneManager.LoadScene(sceneEnum.ToString());
+        StartCoroutine(TransitScene(sceneEnum.ToString()));
+    }
+
+    public IEnumerator TransitScene(string sceneName)
+    {
+        transitionAnim.SetTrigger("End");
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(sceneName);
+        transitionAnim.SetTrigger("Start");
     }
 
 }

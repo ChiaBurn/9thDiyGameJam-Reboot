@@ -78,7 +78,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void GoChap02()
     {
-        manager.TransitScene(SceneEnum.Chap_02_Scene);
+        manager.Go(SceneEnum.Chap_02_Scene);
     }
 
 
@@ -90,6 +90,6 @@ public class MainMenuManager : MonoBehaviour
 
     public void GoResult()
     {
-        manager.TransitScene(SceneEnum.Result_Scene);
+        manager.Go(SceneEnum.Result_Scene);
     }
 }

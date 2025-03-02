@@ -302,6 +302,6 @@ public class EazyJigsawManager : MonoBehaviour
 
     public void GoMainMenu()
     {
-        manager.TransitScene(SceneEnum.MainMenu_Scene);
+        manager.Go(SceneEnum.MainMenu_Scene);
     }
 }
