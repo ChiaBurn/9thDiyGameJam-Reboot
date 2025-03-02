@@ -235,7 +235,7 @@ MonoBehaviour:
   robot_01_01_good: {fileID: 8228378428993901340, guid: 87f78472145cf4e4191c5f5de8f2a1d3, type: 3}
   robot_01_01_bad: {fileID: 8014668618764489022, guid: 1b149489928f95344aabada2d0b65b2c, type: 3}
   robot_01_02_good: {fileID: 4473674454084977133, guid: e6adc600844d7294c90724928a4e9726, type: 3}
-  robot_01_02_bad: {fileID: 5772820238045667372, guid: 99f3f9477a35d654594fdec0cdf343e9, type: 3}
+  robot_01_02_bad: {fileID: 5733420114442191527, guid: 32b5608a763ea9945a5ddf8cba9a6c50, type: 3}
   robot_01_03_good: {fileID: 4671920372597472624, guid: 842e1e54cbbc8d5488dfb8c70915e08e, type: 3}
   robot_01_03_bad: {fileID: 4785435799305861156, guid: fc2eb347f6da6894f85123f89e4635d5, type: 3}
   robot_02_01_good: {fileID: 8168554330194179414, guid: c68280c5492247546bef77ebe22a4cdb, type: 3}
@@ -637,7 +637,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 46.981365}
+  m_AnchoredPosition: {x: 0, y: 34}
   m_SizeDelta: {x: 595.079, y: 501.119}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &923877460
@@ -660,7 +660,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5772820238045667372, guid: 99f3f9477a35d654594fdec0cdf343e9, type: 3}
+  m_Sprite: {fileID: 1910058230903015197, guid: 5a0a3f0e86749c84caa5c647f284e81a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1201,7 +1201,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1901894585
 RectTransform:
   m_ObjectHideFlags: 0

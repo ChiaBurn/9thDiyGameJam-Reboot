@@ -96,18 +96,18 @@ public class PlotManager : MonoBehaviour
         };
         #endregion
 
-        switch (status)
-        {
-            case LevelStatusEnum.Successed:
-                emoji.sprite = blingEmoji;
-                break;
+        // switch (status)
+        // {
+        //     case LevelStatusEnum.Successed:
+        //         emoji.sprite = blingEmoji;
+        //         break;
 
-            case LevelStatusEnum.Begin:
-            case LevelStatusEnum.Failed:
-            default:
-                emoji.sprite = sweatEmoji;
-                break;
-        }
+        //     case LevelStatusEnum.Begin:
+        //     case LevelStatusEnum.Failed:
+        //     default:
+        //         emoji.sprite = sweatEmoji;
+        //         break;
+        // }
 
         robot.sprite = RobotSpriteDictionary[$"{chap}_{level}_{status}"];
     }
