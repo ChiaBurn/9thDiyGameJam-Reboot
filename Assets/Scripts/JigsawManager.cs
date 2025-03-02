@@ -29,15 +29,20 @@ public class JigsawManager : MonoBehaviour
     private Vector3 offset;
     private int finishedPieceCount = 0;
 
+
+private PersistentManager manager;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        SelectImage(0);
+        manager = PersistentManager.Instance;
+        var jigsawTextureIndex = manager.currentLevel - 1;
+
+        SelectImage(jigsawTextureIndex);
     }
 
     public void SelectImage(int level)
     {
-        Debug.Log($"SelectImage({level})");
         if (pieces != null && pieces.Any())
         {
             ClearBoard();
