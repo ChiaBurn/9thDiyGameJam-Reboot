@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 184629561}
   - component: {fileID: 184629562}
   m_Layer: 0
-  m_Name: EazyJigsawManager
+  m_Name: JigsawManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 184629560}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b4cff658d41c1943a36a1898a758c26, type: 3}
+  m_Script: {fileID: 11500000, guid: d5a6cfe531f314d4e9983f482ec40815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   difficulty: 3
