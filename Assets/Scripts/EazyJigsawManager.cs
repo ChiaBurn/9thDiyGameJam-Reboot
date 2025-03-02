@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class JigsawManager : MonoBehaviour
+public class EazyJigsawManager : MonoBehaviour
 {
     [Header("Game Elements")]
     [Range(3, 6)]

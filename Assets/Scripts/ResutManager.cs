@@ -15,11 +15,13 @@ public class ResutManager : MonoBehaviour
     public Sprite stars_2;
     public Sprite stars_3;
 
+private PersistentManager manager;
 
     void Start()
     {
-        var chap = PersistentManager.Instance.currentChapter;
-        var score = PersistentManager.Instance.currentChapterScore;
+        manager = PersistentManager.Instance;
+        var chap = manager.currentChapter;
+        var score = manager.currentChapterScore;
 
         SetStarsByChapScore(score);
         SetConclusionByScore(chap, score);
@@ -85,9 +87,14 @@ public class ResutManager : MonoBehaviour
 
         conclusion.text = conclusionDictionary_tw[$"{chap}_{score}"];
     }
+    
+    public void GoNext()
+    {
+        manager.GoNext();
+    }
 
     public void GoMainMenu()
     {
-        PersistentManager.Instance.TransitScene(SceneEnum.MainMenu_Scene);
+        manager.TransitScene(SceneEnum.MainMenu_Scene);
     }
 }

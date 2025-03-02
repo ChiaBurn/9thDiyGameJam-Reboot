@@ -78,18 +78,18 @@ public class MainMenuManager : MonoBehaviour
 
     public void GoChap02()
     {
-        PersistentManager.Instance.TransitScene(SceneEnum.Chap_02_Scene);
+        manager.TransitScene(SceneEnum.Chap_02_Scene);
     }
 
 
-    public void GoPlot()
+    public void Play()
     {
-        PersistentManager.Instance.TransitScene(SceneEnum.Plot_Scene);
+        manager.GoNext();
     }
 
 
     public void GoResult()
     {
-        PersistentManager.Instance.TransitScene(SceneEnum.Result_Scene);
+        manager.TransitScene(SceneEnum.Result_Scene);
     }
 }

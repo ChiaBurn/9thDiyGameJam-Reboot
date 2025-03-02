@@ -42,6 +42,105 @@ public class PersistentManager : MonoBehaviour
         }
     }
 
+    public void GoNext()
+    {
+        Enum.TryParse(SceneManager.GetActiveScene().name, out SceneEnum currentScene);
+        Debug.Log("GoNext");
+
+        switch (currentScene)
+        {
+            case SceneEnum.MainMenu_Scene:
+                Debug.Log("case SceneEnum.MainMenu_Scene");
+                SetChapInitialStatus(1);
+                TransitScene(SceneEnum.Plot_Scene);
+                break;
+
+            case SceneEnum.Chap_01_Scene:
+            case SceneEnum.Chap_02_Scene:
+                Debug.Log("case Chap_01_Scene or Chap_02_Scene");
+                TransitScene(SceneEnum.Plot_Scene);
+                break;
+
+            case SceneEnum.Plot_Scene:
+                Debug.Log("case SceneEnum.Plot_Scene");
+                if (currentLevelStatus.Equals(LevelStatusEnum.Begin))
+                {
+                    TransitScene(currentChapter switch
+                    {
+                        1 => SceneEnum.Chap_01_Scene,
+                        2 => SceneEnum.Chap_02_Scene,
+                        _ => SceneEnum.MainMenu_Scene
+                    });
+                }
+                else
+                {
+                    if (currentLevel == 3)
+                    {
+                        TransitScene(SceneEnum.Result_Scene);
+                    }
+                    else
+                    {
+                        UpgradeChapAndLevel();
+                        // Test
+                        TransitScene(SceneEnum.Plot_Scene);
+                    }
+
+                }
+
+                break;
+
+            case SceneEnum.Result_Scene:
+                Debug.Log("case SceneEnum.Result_Scene");
+                var isGameOver = currentChapter == 2 || currentChapterScore == 0;
+                currentChapterScore = 0;
+
+                if (isGameOver)
+                {
+                    TransitScene(SceneEnum.MainMenu_Scene);
+                }
+                else
+                {
+                    var nextChap = currentChapter + 1;
+                    SetChapInitialStatus(nextChap);
+                    TransitScene(SceneEnum.Plot_Scene);
+                }
+                break;
+        }
+    }
+
+    private void SetChapInitialStatus(int chap)
+    {
+
+        Debug.Log($"SetChapInitialStatus({chap})");
+        currentChapter = chap;
+        currentLevel = 1;
+        currentLevelStatus = LevelStatusEnum.Begin;
+        currentChapterScore = 0;
+    }
+
+    private void UpgradeChapAndLevel()
+    {
+        Debug.Log($"UpgradeChapAndLevel()");
+        currentLevelStatus = LevelStatusEnum.Begin;
+        if (currentLevel == 3)
+        {
+            currentChapter = currentChapter switch
+            {
+                1 => 2,
+                2 => 1,
+                _ => 1
+            };
+        }
+        currentLevel = currentLevel switch
+        {
+            1 => 2,
+            2 => 3,
+            3 => 1,
+            _ => 1
+        };
+    }
+
+
     public void TransitScene(SceneEnum sceneEnum)
     {
         SceneManager.LoadScene(sceneEnum.ToString());
