@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour
 {
+    public GameObject debugModeCanvas;
+    public Text modeText;
     public Text chapText;
     public Text levelText;
     public Text statusText;
@@ -13,10 +15,18 @@ public class MainMenuManager : MonoBehaviour
     void Start()
     {
         manager = PersistentManager.Instance;
+        modeText.text = $"isDebugMode: {manager.isDebugMode}";
         chapText.text = $"Chap: {manager.currentChapter}";
         levelText.text = $"Level: {manager.currentLevel}";
         statusText.text = $"Status: {manager.currentLevelStatus}";
         scoreText.text = $"Score: {manager.currentChapterScore}";
+        debugModeCanvas.SetActive(manager.isDebugMode);
+    }
+
+    public void ChangeMode()
+    {
+        manager.isDebugMode = !manager.isDebugMode;
+        debugModeCanvas.SetActive(manager.isDebugMode);
     }
 
     public void ChangeChap()

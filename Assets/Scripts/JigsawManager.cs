@@ -245,7 +245,6 @@ public class JigsawManager : MonoBehaviour
                 // Snap to our destination.
                 draggingPiece.localPosition = empty;
                 isSuccess &= empty == targetPosition;
-                Debug.Log($"isSuccess: {isSuccess}");
 
                 // Disable the collider so we can't click on the object anymore.
                 draggingPiece.GetComponent<BoxCollider2D>().enabled = false;

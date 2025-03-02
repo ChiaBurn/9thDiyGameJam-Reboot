@@ -22,6 +22,7 @@ public enum LevelStatusEnum
 
 public class PersistentManager : MonoBehaviour
 {
+    public bool isDebugMode = false;
     public static PersistentManager Instance { get; private set; }
     public int currentChapter = 1;
     public int currentLevel = 1;
