@@ -232,18 +232,18 @@ MonoBehaviour:
   emoji: {fileID: 1901894586}
   sweatEmoji: {fileID: 3959922740387019359, guid: 835c9070d90144045973b784be2cab71, type: 3}
   blingEmoji: {fileID: -1937887712669590171, guid: 5564fe7f50cb9c64c85408a222c6c2bf, type: 3}
-  robot_01_01_good: {fileID: 8228378428993901340, guid: 87f78472145cf4e4191c5f5de8f2a1d3, type: 3}
-  robot_01_01_bad: {fileID: 8014668618764489022, guid: 1b149489928f95344aabada2d0b65b2c, type: 3}
-  robot_01_02_good: {fileID: 4473674454084977133, guid: e6adc600844d7294c90724928a4e9726, type: 3}
-  robot_01_02_bad: {fileID: 5733420114442191527, guid: 32b5608a763ea9945a5ddf8cba9a6c50, type: 3}
-  robot_01_03_good: {fileID: 4671920372597472624, guid: 842e1e54cbbc8d5488dfb8c70915e08e, type: 3}
-  robot_01_03_bad: {fileID: 4785435799305861156, guid: fc2eb347f6da6894f85123f89e4635d5, type: 3}
-  robot_02_01_good: {fileID: 8168554330194179414, guid: c68280c5492247546bef77ebe22a4cdb, type: 3}
-  robot_02_01_bad: {fileID: 3434131122729510422, guid: 8fd74f516ec355941a18d3d74e22fe29, type: 3}
-  robot_02_02_good: {fileID: 7262095097011920349, guid: ffdb7021ad7439049959a0ee226abc75, type: 3}
-  robot_02_02_bad: {fileID: 4600285846132669927, guid: 98a3c0127b9a66942a5e7aaa471e1f7a, type: 3}
-  robot_02_03_good: {fileID: 4808168688507950933, guid: 02a94d290f2bd834aa2365cd33f86e35, type: 3}
-  robot_02_03_bad: {fileID: -1463777017401222189, guid: fb4b187f17624fb4c87eda8f0663bccd, type: 3}
+  robot_01_01_good: {fileID: 4942602111907038818, guid: 634158506e578ae45b1090032905e835, type: 3}
+  robot_01_01_bad: {fileID: -2305112646409274607, guid: 7fad5689f60ef314fa3dbc86e17c7e55, type: 3}
+  robot_01_02_good: {fileID: -2213099314651093799, guid: ae191a0fd2bc7a841b156372977f4cf1, type: 3}
+  robot_01_02_bad: {fileID: 131420661914474831, guid: 32b5608a763ea9945a5ddf8cba9a6c50, type: 3}
+  robot_01_03_good: {fileID: -1840041535048756494, guid: afad8f1a47ce4b14dbe7eabed76f4c8d, type: 3}
+  robot_01_03_bad: {fileID: 1910058230903015197, guid: 5a0a3f0e86749c84caa5c647f284e81a, type: 3}
+  robot_02_01_good: {fileID: 781732086852818090, guid: c1066e0ca05625f4d94793de9937701b, type: 3}
+  robot_02_01_bad: {fileID: -4283459811502020884, guid: b5c0db836e678be479793e041530310f, type: 3}
+  robot_02_02_good: {fileID: 5451527152516079891, guid: 94b9312c47b94e04a9c1a0bbf1888b58, type: 3}
+  robot_02_02_bad: {fileID: 440256683453039654, guid: 565930b96efa5ce4dbe34620954b930f, type: 3}
+  robot_02_03_good: {fileID: -2072254196384226134, guid: 8d485656cda473147a930111016f8aed, type: 3}
+  robot_02_03_bad: {fileID: 8227000988538628103, guid: 6a262b745c12e2b47ad7e9f201380439, type: 3}
 --- !u!4 &304083135
 Transform:
   m_ObjectHideFlags: 0
@@ -660,7 +660,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1910058230903015197, guid: 5a0a3f0e86749c84caa5c647f284e81a, type: 3}
+  m_Sprite: {fileID: 8227000988538628103, guid: 6a262b745c12e2b47ad7e9f201380439, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
