@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class JigsawManager : MonoBehaviour
+public class EazyJigsawManager : MonoBehaviour
 {
     [Header("Game Elements")]
     [Range(3, 6)]
@@ -244,34 +244,22 @@ public class JigsawManager : MonoBehaviour
             {
                 // Snap to our destination.
                 draggingPiece.localPosition = empty;
+                isSuccess &= empty == targetPosition;
 
-                // Check if success
-                bool isCorrect = empty == targetPosition;
-                isSuccess &= isCorrect;
-
-                 if (isCorrect) 
+                // Disable the collider so we can't click on the object anymore.
+                draggingPiece.GetComponent<BoxCollider2D>().enabled = false;
+                emptyPositions.Remove(empty);
+                // Increase the number of correct pieces, and check for puzzle completion.
+                if (!emptyPositions.Any())
                 {
-                    // Turn Pieces gray
-                    MeshRenderer meshRenderer = draggingPiece.GetComponent<MeshRenderer>();
-                    if (meshRenderer != null)
-                    {
-                        meshRenderer.material.shader = Shader.Find("Custom/UnlitTextureWithColor"); // Make sure use right Shader
-                        meshRenderer.material.SetColor("_Color", new Color(0.7f, 0.7f, 0.7f, 1f)); // gray
-                    }
-
-                    // Disable the collider so we can't click on the object anymore.
-                    draggingPiece.GetComponent<BoxCollider2D>().enabled = false;
-                    emptyPositions.Remove(empty);
-                    // Increase the number of correct pieces, and check for puzzle completion.
-                    if (!emptyPositions.Any())
-                    {
-                        StartCoroutine(EndGame());
-                    }
-                    
+                    StartCoroutine(EndGame());
                 }
                 break;
             }
+
         }
+
+
     }
 
 

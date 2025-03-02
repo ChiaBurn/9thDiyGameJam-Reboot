@@ -36,16 +36,17 @@ public class PlotManager : MonoBehaviour
     public Sprite robot_02_03_bad;
 
 
-
+private PersistentManager manager;
 
     private Queue<string> sentencesToShow;
 
     void Start()
     {
+        manager = PersistentManager.Instance;
         sentencesToShow = new Queue<string>();
-        var chap = PersistentManager.Instance.currentChapter;
-        var level = PersistentManager.Instance.currentLevel;
-        var status = PersistentManager.Instance.currentLevelStatus;
+        var chap = manager.currentChapter;
+        var level = manager.currentLevel;
+        var status = manager.currentLevelStatus;
 
 
         SetImageByGameStatus(chap, level, status);
@@ -330,12 +331,12 @@ public class PlotManager : MonoBehaviour
 
     private void EndDialogue()
     {
-        Debug.Log("End Dialogue");
+        manager.GoNext();
     }
 
     public void GoMainMenu()
     {
-        PersistentManager.Instance.TransitScene(SceneEnum.MainMenu_Scene);
+        manager.TransitScene(SceneEnum.MainMenu_Scene);
     }
 
 }
