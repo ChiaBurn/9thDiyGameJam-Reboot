@@ -40,6 +40,7 @@ public class PlotManager : MonoBehaviour
 
     private Queue<string> sentencesToShow;
     private string currentSentence = string.Empty;
+    private bool isTransiting = false;
 
     void Start()
     {
@@ -309,8 +310,11 @@ public class PlotManager : MonoBehaviour
 
     public void ShowNextSentence()
     {
+        if (isTransiting)
+            return;
+
         StopCoroutine(nameof(TypeSentence));
-        
+
         if (currentSentence != "" && dialogueText.text != currentSentence)
         {
             dialogueText.text = currentSentence;
@@ -340,6 +344,7 @@ public class PlotManager : MonoBehaviour
 
     private void EndDialogue()
     {
+        isTransiting = true;
         manager.GoNext();
     }
 

@@ -10,6 +10,7 @@ public class MainMenuManager : MonoBehaviour
     public Text statusText;
     public Text scoreText;
     private PersistentManager manager;
+    private bool isTransiting = false;
 
 
     void Start()
@@ -84,6 +85,10 @@ public class MainMenuManager : MonoBehaviour
 
     public void Play()
     {
+        if (isTransiting)
+            return;
+        isTransiting = true;
+
         manager.GoNext();
     }
 

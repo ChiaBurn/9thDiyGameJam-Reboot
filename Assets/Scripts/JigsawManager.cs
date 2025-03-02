@@ -39,7 +39,17 @@ public class JigsawManager : MonoBehaviour
     void Start()
     {
         manager = PersistentManager.Instance;
-        difficulty = manager.currentChapter + manager.currentLevel;
+        difficulty =  $"{manager.currentChapter}_{manager.currentLevel}" switch
+        {
+            "1_1" => 2,
+            "1_2" => 3,
+            "1_3" => 4,
+            "2_1" => 4,
+            "2_2" => 3,
+            "2_3" => 4,
+            _ => 3
+        };
+
         var jigsawTextureIndex = manager.currentLevel - 1;
 
         SelectImage(jigsawTextureIndex);

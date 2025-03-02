@@ -15,7 +15,8 @@ public class ResutManager : MonoBehaviour
     public Sprite stars_2;
     public Sprite stars_3;
 
-private PersistentManager manager;
+    private PersistentManager manager;
+    private bool isTransiting = false;
 
     void Start()
     {
@@ -87,9 +88,13 @@ private PersistentManager manager;
 
         conclusion.text = conclusionDictionary_tw[$"{chap}_{score}"];
     }
-    
+
     public void GoNext()
     {
+        if (isTransiting)
+            return;
+
+        isTransiting = true;
         manager.GoNext();
     }
 
