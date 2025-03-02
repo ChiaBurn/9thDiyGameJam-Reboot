@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -27,17 +28,24 @@ public class JigsawManager : MonoBehaviour
 
     private Transform draggingPiece = null;
     private Vector3 offset;
-    private int finishedPieceCount = 0;
+
+    private List<Vector2> emptyPositions;
+    private bool isSuccess = true;
+
+
+    private PersistentManager manager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        SelectImage(0);
+        manager = PersistentManager.Instance;
+        var jigsawTextureIndex = manager.currentLevel - 1;
+
+        SelectImage(jigsawTextureIndex);
     }
 
-    public void SelectImage(int level)
+    private void SelectImage(int level)
     {
-        Debug.Log($"SelectImage({level})");
         if (pieces != null && pieces.Any())
         {
             ClearBoard();
@@ -45,11 +53,13 @@ public class JigsawManager : MonoBehaviour
         StartGame(imageTextures[level]);
     }
 
-    public void StartGame(Texture2D jigsawTexture)
+    private void StartGame(Texture2D jigsawTexture)
     {
 
         // We store a list of the transform for each jigsaw piece so we can track them later.
         pieces = new List<Transform>();
+        emptyPositions = new List<Vector2>();
+        isSuccess = true;
 
         // Calculate the size of each jigsaw piece, based on a difficulty setting.
         dimensions = GetDimensions(jigsawTexture, difficulty);
@@ -96,11 +106,14 @@ public class JigsawManager : MonoBehaviour
             {
                 // Create the piece in the right location of the right size.
                 Transform piece = Instantiate(piecePrefab, gameHolder);
-                piece.localPosition = new Vector3(
-                  (-width * dimensions.x / 2) + (width * col) + (width / 2),
-                  (-height * dimensions.y / 2) + (height * row) + (height / 2),
-                  PIEC_Z);
+                var localPosition = new Vector3(
+                                  (-width * dimensions.x / 2) + (width * col) + (width / 2),
+                                  (-height * dimensions.y / 2) + (height * row) + (height / 2),
+                                  PIEC_Z);
+
+                piece.localPosition = localPosition;
                 piece.localScale = new Vector3(width, height, 1f);
+                emptyPositions.Add(localPosition);
 
                 // We don't have to name them, but always useful for debugging.
                 piece.name = $"Piece {(row * dimensions.x) + col}";
@@ -224,30 +237,34 @@ public class JigsawManager : MonoBehaviour
         Vector2 targetPosition = new((-width * dimensions.x / 2) + (width * col) + (width / 2),
                                      (-height * dimensions.y / 2) + (height * row) + (height / 2));
 
-        // Check if we're in the correct location.
-        if (Vector2.Distance(draggingPiece.localPosition, targetPosition) < (width / 2))
+        foreach (var empty in emptyPositions)
         {
-            // Snap to our destination.
-            draggingPiece.localPosition = targetPosition;
-
-            // Disable the collider so we can't click on the object anymore.
-            draggingPiece.GetComponent<BoxCollider2D>().enabled = false;
-
-            // Increase the number of correct pieces, and check for puzzle completion.
-            finishedPieceCount++;
-            if (finishedPieceCount == pieces.Count)
+            // Check if we're near an empty position.
+            if (Vector2.Distance(draggingPiece.localPosition, empty) < (width / 2))
             {
-                Debug.Log("all piece put");
+                // Snap to our destination.
+                draggingPiece.localPosition = empty;
+                isSuccess &= empty == targetPosition;
 
-                finishedText.SetActive(true);
+                // Disable the collider so we can't click on the object anymore.
+                draggingPiece.GetComponent<BoxCollider2D>().enabled = false;
+                emptyPositions.Remove(empty);
+                // Increase the number of correct pieces, and check for puzzle completion.
+                if (!emptyPositions.Any())
+                {
+                    StartCoroutine(EndGame());
+                }
+                break;
             }
+
         }
+
+
     }
 
 
-    public void ClearBoard()
+    private void ClearBoard()
     {
-        finishedPieceCount = 0;
         // Destroy all the puzzle pieces.
         foreach (Transform piece in pieces)
         {
@@ -259,7 +276,16 @@ public class JigsawManager : MonoBehaviour
         finishedText.SetActive(false);
     }
 
+    private IEnumerator EndGame()
+    {
+        finishedText.SetActive(true);
 
+        manager.currentChapterScore += isSuccess ? 1 : 0;
+        manager.currentLevelStatus = isSuccess ? LevelStatusEnum.Successed : LevelStatusEnum.Failed;
+
+        yield return new WaitForSeconds(1f);
+        GoPlot();
+    }
 
     public void GoMainMenu()
     {

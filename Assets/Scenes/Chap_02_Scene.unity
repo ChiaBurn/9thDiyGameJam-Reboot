@@ -165,7 +165,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   difficulty: 3
   imageTextures:
-  - {fileID: 2800000, guid: f75a68c0ef99a234ba9d9af0427996c4, type: 3}
+  - {fileID: 2800000, guid: 731c01a6ca7a62c4fae784eb1161453b, type: 3}
+  - {fileID: 2800000, guid: 6af0408e0fb867240b10916786de1528, type: 3}
+  - {fileID: 2800000, guid: 7d7c81716dea73c4c93c01ddf771b0ac, type: 3}
   gameHolder: {fileID: 2145735372}
   piecePrefab: {fileID: 4654686245173576844, guid: a6d5d10ddc7bc2b4597bc88e2e208403, type: 3}
   finishedText: {fileID: 459616220}
