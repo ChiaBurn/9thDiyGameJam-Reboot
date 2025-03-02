@@ -244,7 +244,23 @@ public class EazyJigsawManager : MonoBehaviour
             {
                 // Snap to our destination.
                 draggingPiece.localPosition = empty;
-                isSuccess &= empty == targetPosition;
+
+                // Check if success
+                bool isCorrect = empty == targetPosition;
+                isSuccess &= isCorrect;
+
+                if (isCorrect)
+                {
+                    // Turn Pieces gray
+                    MeshRenderer meshRenderer = draggingPiece.GetComponent<MeshRenderer>();
+                    if (meshRenderer != null)
+                    {
+                        meshRenderer.material.shader = Shader.Find("Custom/UnlitTextureWithColor"); // Make sure use right Shader
+                        meshRenderer.material.SetColor("_Color", new Color(0.7f, 0.7f, 0.7f, 1f)); // gray
+                    }
+
+                }
+
 
                 // Disable the collider so we can't click on the object anymore.
                 draggingPiece.GetComponent<BoxCollider2D>().enabled = false;
@@ -256,10 +272,7 @@ public class EazyJigsawManager : MonoBehaviour
                 }
                 break;
             }
-
         }
-
-
     }
 
 
